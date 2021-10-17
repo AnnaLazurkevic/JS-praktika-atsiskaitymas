@@ -583,51 +583,51 @@ console.log();
 //    mėgstu pieną , bet medų nelabai.labanakt. -> Mėgstu pieną, bet medų nelabai. Labanakt.
 console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
 {
-  function capitalizeFirstWord(str) {
-    return str[0].toUpperCase() + str.substring(1);
-  }
-  function splitIntoSentences(paragraph) {
-    const result = {
-      sentences: [],
-      separators: []
-    };
-    let sentenceStart = 0;
-    for (let i = 0; i < paragraph.length; i++) {
-      const symbol = paragraph[i];
-      if (['.', '?', '!'].includes(symbol)) {
-        const sentence = capitalizeFirstWord(paragraph.slice(sentenceStart, i).trim());
-        result.sentences.push(sentence);
-        result.separators.push(symbol);
-        sentenceStart = i + 1;
-      }
-    }
-    return result;
-  }
-  function reduceEmptySpaces(str) {
-    for (let i = str.length - 1; i >= 0; i--) {
-      const letter = str[i];
-      const prevLetter = str[i - 1];
-      if ([' ', ','].includes(letter) && prevLetter === ' ') {
-        str = str.slice(0, i - 1) + str.slice(i);
-      }
-    }
-    return str;
-  }
-  function fixParagraph(paragraph) {
-    const { sentences, separators } = splitIntoSentences(paragraph);
-    let result = '';
-    for (let i = 0; i < sentences.length; i++) {
-      const sentence = reduceEmptySpaces(sentences[i]);
-      result += sentence + separators.shift() + ' ';
-    }
-    return result;
-  }
+  // function capitalizeFirstWord(str) {
+  //   return str[0].toUpperCase() + str.substring(1);
+  // }
+  // function splitIntoSentences(paragraph) {
+  //   const result = {
+  //     sentences: [],
+  //     separators: []
+  //   };
+  //   let sentenceStart = 0;
+  //   for (let i = 0; i < paragraph.length; i++) {
+  //     const symbol = paragraph[i];
+  //     if (['.', '?', '!'].includes(symbol)) {
+  //       const sentence = capitalizeFirstWord(paragraph.slice(sentenceStart, i).trim());
+  //       result.sentences.push(sentence);
+  //       result.separators.push(symbol);
+  //       sentenceStart = i + 1;
+  //     }
+  //   }
+  //   return result;
+  // }
+  // function reduceEmptySpaces(str) {
+  //   for (let i = str.length - 1; i >= 0; i--) {
+  //     const letter = str[i];
+  //     const prevLetter = str[i - 1];
+  //     if ([' ', ','].includes(letter) && prevLetter === ' ') {
+  //       str = str.slice(0, i - 1) + str.slice(i);
+  //     }
+  //   }
+  //   return str;
+  // }
+  // function fixParagraph(paragraph) {
+  //   const { sentences, separators } = splitIntoSentences(paragraph);
+  //   let result = '';
+  //   for (let i = 0; i < sentences.length; i++) {
+  //     const sentence = reduceEmptySpaces(sentences[i]);
+  //     result += sentence + separators.shift() + ' ';
+  //   }
+  //   return result;
+  // }
   
-  const paragraph = '    labas , as jonas . Tave      vadina Kęstu? Taip ir žinojau  !    ';
-  const fixedParagraph = fixParagraph(paragraph);
-  console.log(paragraph);
-  console.log(fixedParagraph);
-  console.log('---');
+  // const paragraph = '    labas , as jonas . Tave      vadina Kęstu? Taip ir žinojau  !    ';
+  // const fixedParagraph = fixParagraph(paragraph);
+  // console.log(paragraph);
+  // console.log(fixedParagraph);
+  // console.log('---');
 
 // /////////////////////////////////////
 
